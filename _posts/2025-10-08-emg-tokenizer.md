@@ -27,19 +27,19 @@ We use the [emg2qwerty](https://arxiv.org/abs/2410.20081) benchmark to evaluate 
 
 To enable offloading the bulk of model inference from the wristband to a companion device, we introduce an RVQ bottleneck immediately after the first encoder block and train it end-to-end via CTC on the standard emg2qwerty task. Since EMG signals are not directly human-interpretable (unlike speech/audio), we do not train a generator to reconstruct the compressed EMG (as SoundStream does for speech). Otherwise, we follow the same strategy as SoundStream for learning the codebook: the codebook vectors are initialized using k-means clustering on the first training batch and updated using exponential moving average (EMA) per training step. Codebook vectors that are unused or have very few assignments (i.e., whose EMA cluster size falls below a certain threshold) are expired and replaced with randomly chosen entries from the current training batch.
 
-RVQ implementation can be found at [vector_quantizer.py](https://github.com/viswanathgs/emg-tokenizer/blob/main/emg2qwerty/vector_quantizer.py) and its hyperparams at [residual_vq.yaml](https://github.com/viswanathgs/emg-tokenizer/blob/main/config/vector_quantizer/residual_vq.yaml).
+RVQ implementation can be found at [vector_quantizer.py](https://github.com/vishar0/emg-tokenizer/blob/main/emg2qwerty/vector_quantizer.py) and its hyperparams at [residual_vq.yaml](https://github.com/vishar0/emg-tokenizer/blob/main/config/vector_quantizer/residual_vq.yaml).
 
 Considering my present [GPU-poor conditions](https://x.com/viswanathgs/status/1935749077553086522), the experiments below focus only on single-user personalized models in the emg2qwerty suite and do not include the larger generic models. In this setting, we achieve **400x compression** by mapping 256-dimensional continuous float32 embeddings after the first encoder block to 20-bit discrete tokens using a 2-level RVQ consisting of 1024 codes per level, without degrading task performance measured by CER.
 
-![emg2qwerty personalization CER with RVQ](https://github.com/viswanathgs/emg-tokenizer/blob/main/assets/emg-tokenizer-fig1.png?raw=true)
+![emg2qwerty personalization CER with RVQ](https://github.com/vishar0/emg-tokenizer/blob/main/assets/emg-tokenizer-fig1.png?raw=true)
 **Fig 1:** *RVQ with 2x1024 codes indicates 2 codebook levels consisting of 1024 entries each (10 bits per level), compressing 256-dim float32 embeddings into 20-bit discrete tokens (400x compression). RVQ 2x1024 approximates the expressive capacity of vanilla VQ with $2^{20}$ (≈1 million) codebook entries, while only storing a total of 2048 codes.*
 
 The following illustrates the scalability advantage of RVQ over vanilla VQ.
 
-![VQ vs RVQ comparison on a single user](https://github.com/viswanathgs/emg-tokenizer/blob/main/assets/emg-tokenizer-fig2.png?raw=true)
+![VQ vs RVQ comparison on a single user](https://github.com/vishar0/emg-tokenizer/blob/main/assets/emg-tokenizer-fig2.png?raw=true)
 **Fig 2:** *4-level RVQ with 512 codes per level (2048 total codes) fully recovers baseline CER, compressing 256-dim float32 embeddings into 36-bit discrete tokens. In contrast, vanilla VQ with 4096 codes (2x more storage) fails to match baseline performance. This RVQ configuration approximates the expressive capacity of a vanilla VQ with $2^{36}$ (≈68 billion) codebook entries, while only storing 2048 codes.*
 
-Full repo on [GitHub](https://github.com/viswanathgs/emg-tokenizer). Plots were generated using [this Colab notebook](https://colab.research.google.com/drive/1Q9VelBTyahGMDYFEY2FtkMMKYgwvquRi?usp=sharing).
+Full repo on [GitHub](https://github.com/vishar0/emg-tokenizer). Plots were generated using [this Colab notebook](https://colab.research.google.com/drive/1Q9VelBTyahGMDYFEY2FtkMMKYgwvquRi?usp=sharing).
 
 ## EMG, LLMs, and Adaptive Neural Interfaces
 
