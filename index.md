@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="social-links" markdown="1">
-[github](https://github.com/vishar0) \| [linkedin](https://linkedin.com/in/vishar0) \| [resume](/assets/resume.pdf) \| [twitter](https://twitter.com/viswanathgs) \| [scholar](https://scholar.google.com/citations?user=hLPvq9AAAAAJ) \| [email](mailto:viswanathgs@gmail.com)
+[github](https://github.com/vishar0) · [linkedin](https://linkedin.com/in/vishar0) · [twitter](https://twitter.com/viswanathgs) · [scholar](https://scholar.google.com/citations?user=hLPvq9AAAAAJ) · [email](mailto:viswanathgs@gmail.com)
 </div>
 
 I'm an AI research scientist and an engineer. I also dabble in neuroscience. I'm currently building something new and ambitious with an incredible team.

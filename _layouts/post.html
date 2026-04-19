@@ -24,7 +24,6 @@
   <div class="header">
     <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
     <div class="nav">
-      <a href="{{ '/' | relative_url }}">home</a>
       <a href="{{ '/blog/' | relative_url }}" class="active">blog</a>
       <a href="{{ '/thoughts/' | relative_url }}">thoughts</a>
     </div>
@@ -32,7 +31,7 @@
   
   <div class="content">
     <h2>{{ page.title }}</h2>
-    <div class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</div>
+    <div class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</div>
     
     {{ content }}
   </div>

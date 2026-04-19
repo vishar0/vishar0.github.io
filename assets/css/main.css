@@ -142,6 +142,13 @@ a:hover {
   line-height: 1.5;
 }
 
+/* Section headings within blog post body */
+.content .post-meta ~ h2 {
+  font-size: 1.15em;
+  color: var(--color-primary);
+  margin-top: 35px;
+}
+
 /* Post-specific styles */
 .post-meta {
   font-size: 14px;
@@ -251,14 +258,85 @@ ol li {
   margin-bottom: 8px;
 }
 
-/* Social/external links wrapper - no underline by default */
-.social-links a {
-  text-decoration: none !important;
+/* Social/external links wrapper - inherits global underline behavior */
+
+/* Post TOC (kramdown auto-generated, wrapped in <details>) */
+.post-toc {
+  margin: 30px 0 40px 0;
+  padding: 16px 20px;
+  background-color: #fafafa;
+  border-left: 2px solid var(--color-border);
+  font-size: 14px;
 }
 
-.social-links a:hover {
-  text-decoration: underline !important;
-  text-decoration-color: var(--underline-dark) !important;
+.post-toc summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+}
+
+.post-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.post-toc summary::marker {
+  display: none;
+  content: "";
+}
+
+.post-toc summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 6px;
+  color: var(--color-light);
+  font-size: 1.4em;
+  line-height: 1;
+  vertical-align: -2px;
+  transition: transform 0.15s ease;
+}
+
+.post-toc[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.post-toc[open] > summary {
+  margin-bottom: 10px;
+}
+
+#markdown-toc {
+  list-style: none;
+  margin: 0;
+}
+
+#markdown-toc li {
+  margin-bottom: 4px;
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+#markdown-toc li::before {
+  content: none;
+}
+
+#markdown-toc ul {
+  list-style: none;
+  margin: 4px 0 4px 16px;
+  padding-left: 0;
+}
+
+#markdown-toc a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+#markdown-toc a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--underline-dark);
   text-underline-offset: 2px;
 }
 

@@ -5,6 +5,12 @@ date: 2025-10-08
 categories: blog
 ---
 
+<details class="post-toc" open markdown="1">
+<summary>Contents</summary>
+* TOC
+{:toc}
+</details>
+
 Electromyography (EMG) at the wrist surface is an [emerging modality](https://www.meta.com/emerging-tech/emg-wearable-technology) for human-machine input. EMG taps directly into the motor system and enables decoding human intent from electrical impulses. The recently launched [Meta Neural Band](https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/) relies on EMG as the primary modality for decoding gestures and handwritten text into inputs for AI glasses. A critical milestone in taking this technology from a research prototype into a consumer product, and a long-standing challenge in BCI, has been achieving [out-of-the-box generalization](https://www.nature.com/articles/s41586-025-09255-w) across people. Anatomical, physiological, and behavioral variations across the population demand powerful models that can generalize broadly without requiring extensive calibration.
 
 At the same time, these models must run in real time with extremely low latency. We are accustomed to the instantaneous feedback of keyboards and touchscreens, and any technology that aims to supersede them will be expected to have an equally snappy user experience. For neural interface decoders, the latency requirements are often far stricter than for speech. While speech-to-text systems can tolerate delays of a second or more (with the transcription updating every 2-3 words), gestures for UI control or fast typing require $\mathcal{O}(10\text{ms})$ feedback. Meeting such constraints means the models must run close to the user on edge devices. And because these wearables are expected to be worn and used all day, the models must also be highly efficient in terms of compute and battery usage.
