@@ -261,3 +261,77 @@ ol li {
   text-decoration-color: var(--underline-dark) !important;
   text-underline-offset: 2px;
 }
+
+/* Thoughts listing — title left, date right, inline expand */
+.thoughts-list {
+  margin-top: 0;
+}
+
+.thought-entry {
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 0;
+}
+
+.thought-entry:first-child {
+  padding-top: 0;
+}
+
+.thought-entry:last-child {
+  border-bottom: none;
+}
+
+.thought-entry summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.thought-entry summary::-webkit-details-marker {
+  display: none;
+}
+
+.thought-entry summary::marker {
+  display: none;
+  content: "";
+}
+
+.thought-title::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--color-light);
+  font-size: 1.8em;
+  line-height: 1;
+  vertical-align: -2px;
+  transition: transform 0.15s ease;
+}
+
+.thought-entry[open] .thought-title::before {
+  transform: rotate(90deg);
+}
+
+.thought-title {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.thought-date {
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.thought-content {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: var(--color-primary);
+}
+
+.thought-content p:last-child {
+  margin-bottom: 0;
+}

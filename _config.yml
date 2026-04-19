@@ -12,6 +12,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Collections
+collections:
+  thoughts:
+    output: false
+    sort_by: date
+
 # Permalink settings
 permalink: /blog/:title/
 

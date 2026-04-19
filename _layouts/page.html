@@ -14,10 +14,11 @@
     <div class="nav">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>home</a>
       <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} class="active"{% endif %}>blog</a>
+      <a href="{{ '/thoughts/' | relative_url }}"{% if page.url == '/thoughts/' %} class="active"{% endif %}>thoughts</a>
     </div>
   </div>
   
-  {% unless page.title == 'Blog' %}
+  {% unless page.title == 'Blog' or page.title == 'Thoughts' %}
   <h2>{{ page.title }}</h2>
   {% endunless %}
   
