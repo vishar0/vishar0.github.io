@@ -341,12 +341,18 @@ ol li {
 }
 
 /* Thoughts listing — title left, date right, inline expand */
+.thoughts-count {
+  color: var(--color-light);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
 .thoughts-list {
   margin-top: 0;
 }
 
 .thought-entry {
-  padding: 6px 0;
+  padding: 2px 0;
 }
 
 .thought-entry:first-child {
@@ -396,6 +402,46 @@ ol li {
   color: var(--color-secondary);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+
+a.thought-date:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--underline-dark);
+  text-underline-offset: 2px;
+  color: var(--color-primary);
+}
+
+/* Standalone thought page — compact variant of post layout */
+.thought-page .thought-back {
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.thought-page .thought-back a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.thought-page .thought-back a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--underline-dark);
+  text-underline-offset: 2px;
+}
+
+.thought-page-title {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.thought-page .post-meta {
+  font-size: 13px;
+  margin-bottom: 25px;
 }
 
 .thought-content {

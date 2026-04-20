@@ -15,8 +15,21 @@ plugins:
 # Collections
 collections:
   thoughts:
-    output: false
+    output: true
+    permalink: /thoughts/:slug/
     sort_by: date
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "thoughts"
+    values:
+      layout: "thought"
 
 # Permalink settings
 permalink: /blog/:title/
@@ -24,4 +37,3 @@ permalink: /blog/:title/
 # Social settings
 twitter:
   username: viswanathgs
-  card: summary_large_image
