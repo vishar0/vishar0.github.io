@@ -346,24 +346,20 @@ ol li {
 }
 
 .thought-entry {
-  border-bottom: 1px solid var(--color-border);
-  padding: 12px 0;
+  padding: 6px 0;
 }
 
 .thought-entry:first-child {
   padding-top: 0;
 }
 
-.thought-entry:last-child {
-  border-bottom: none;
-}
-
 .thought-entry summary {
   cursor: pointer;
   list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
 }
 
 .thought-entry summary::-webkit-details-marker {
@@ -399,8 +395,7 @@ ol li {
   font-size: 14px;
   color: var(--color-secondary);
   font-weight: 500;
-  flex-shrink: 0;
-  margin-left: 20px;
+  font-variant-numeric: tabular-nums;
 }
 
 .thought-content {

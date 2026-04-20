@@ -1,11 +1,9 @@
 ---
 title: Turing-worthy problems
-date: 2026-04-14
+date: 2026-04-09
 ---
 
-Are we choosing to work on problems worthy of the Turing Award or the Nobel Prize?
-
-If not, why not?
+Are we choosing to work on problems worthy of the Turing Award or the Nobel Prize? If not, why not?
 
 The point is not the accolade, but the ambition. If your research ends up wildly successful, can you see it being considered for the Turing Award? Maybe that's the new Turing test.
 
