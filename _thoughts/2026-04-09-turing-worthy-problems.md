@@ -1,6 +1,7 @@
 ---
 title: Turing-worthy problems
 date: 2026-04-09
+published: true
 ---
 
 Are we choosing to work on problems worthy of the Turing Award or the Nobel Prize? If not, why not?

@@ -1,6 +1,7 @@
 ---
 title: "Neural Interfaces & LLMs: Tokenizing EMG via Residual Vector Quantization"
 date: 2025-10-08
+published: true
 ---
 
 <details class="post-toc" open markdown="1">

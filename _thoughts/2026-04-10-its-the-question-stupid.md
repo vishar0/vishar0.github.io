@@ -1,6 +1,7 @@
 ---
 title: It's the question, stupid
 date: 2026-04-10
+published: true
 ---
 
 The parameter that has the largest impact in research is taste. Taste is about selecting what to work on. This often requires reframing what looks like a solved problem to ask an entirely new question.
