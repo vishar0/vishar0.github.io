@@ -20,7 +20,7 @@ local-drafts:
 
 ls-drafts:
 	@echo "=== drafts (published: false) ==="
-	@grep -rl "^published: false" _posts _thoughts 2>/dev/null || echo "(none)"
+	@grep -rl "^published: false" _posts 2>/dev/null || echo "(none)"
 
 build:
 	bundle exec jekyll build

@@ -12,24 +12,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Collections
-collections:
-  thoughts:
-    output: true
-    permalink: /thoughts/:slug/
-    sort_by: date
-
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  - scope:
-      path: ""
-      type: "thoughts"
-    values:
-      layout: "thought"
 
 # Permalink settings
 permalink: /blog/:title/
