@@ -1,0 +1,11 @@
+<header class="header">
+  {% if page.layout == 'home' %}
+  <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
+  {% else %}
+  <p class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></p>
+  {% endif %}
+  <nav class="nav" aria-label="Main navigation">
+    <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>home</a>
+    <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' %} class="active" aria-current="page"{% elsif page.layout == 'post' %} class="active"{% endif %}>writing</a>
+  </nav>
+</header>

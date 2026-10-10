@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <title>{{ page.title }} - {{ site.title }}</title>
   
   {% seo %}
   
   <!-- MathJax for math rendering -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     MathJax = {
       tex: {
@@ -19,21 +17,22 @@
       }
     };
   </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
-  <div class="header">
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <div class="nav">
-      <a href="{{ '/blog/' | relative_url }}" class="active">blog</a>
-    </div>
-  </div>
+<body class="post-page">
+  {% include header.html %}
   
-  <div class="content">
-    <h2>{{ page.title }}</h2>
-    <div class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</div>
-    
-    {{ content }}
-  </div>
+  <main class="content">
+    <article>
+      <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        <time class="post-meta" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      </header>
+      <div class="post-body">
+        {{ content }}
+      </div>
+    </article>
+  </main>
 
 </body>
 </html>
