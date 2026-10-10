@@ -13,15 +13,6 @@
   
   <main class="content">
     {{ content }}
-    {% if site.posts.size > 0 %}
-    <section class="home-writing" aria-labelledby="writing-heading">
-      <div class="section-header">
-        <h2 id="writing-heading">Writing</h2>
-        {% if site.posts.size > 3 %}<a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a>{% endif %}
-      </div>
-      {% include writing-list.html limit=3 heading_level=3 %}
-    </section>
-    {% endif %}
   </main>
 
 </body>

@@ -109,37 +109,21 @@ h3 {
 
 .page-title {
   margin: 0 0 32px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .social-links {
-  margin-bottom: 26px;
   font-size: 14px;
   color: var(--color-secondary);
 }
 
-.home-writing {
-  margin-top: 44px;
-  padding-top: 28px;
-  border-top: 1px solid var(--color-border);
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.section-header h2 {
+.social-links p {
   margin: 0;
-  font-size: 19px;
 }
 
-.section-header > a {
-  flex-shrink: 0;
-  font-size: 14px;
+.social-separator {
+  margin: 0 0.25em;
+  color: var(--color-light);
 }
 
 .post-list {
@@ -149,15 +133,15 @@ h3 {
 }
 
 .post-list li {
-  margin: 0 0 28px;
-  padding: 0 0 28px;
-  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 10ch minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: baseline;
+  margin-bottom: 12px;
 }
 
 .post-list li:last-child {
   margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
 }
 
 .post-date,
@@ -168,13 +152,16 @@ h3 {
 }
 
 .post-date {
-  margin-bottom: 6px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .post-list .post-list-title {
   margin: 0;
-  font-size: 17px;
-  line-height: 1.45;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0;
 }
 
 .post-list-title a {

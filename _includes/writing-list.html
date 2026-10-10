@@ -1,9 +1,8 @@
 <ul class="post-list">
-  {% assign post_limit = include.limit | default: site.posts.size %}
-  {% for post in site.posts limit:post_limit %}
+  {% for post in site.posts %}
   <li>
-    <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-    <h{{ include.heading_level | default: 2 }} class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h{{ include.heading_level | default: 2 }}>
+    <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+    <h2 class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
   </li>
   {% endfor %}
 </ul>

@@ -11,6 +11,7 @@ theme: minima
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 defaults:
   - scope:
@@ -20,7 +21,7 @@ defaults:
       layout: "post"
 
 # Permalink settings
-permalink: /blog/:title/
+permalink: /blog/:year/:month/:day/:title/
 
 # Social settings
 twitter:
